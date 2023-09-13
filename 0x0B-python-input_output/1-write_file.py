@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-'''
-Write a function that returns the number
-of lines of a text file
-'''
+"""
+Module for write_file method.
+"""
 
 
-def number_of_lines(filename=""):
-    line_count = 0
-    with open(filename, encoding='utf-8') as f:
-        for line in f:
-            line_count += 1
-    return line_count
+def write_file(filename="", text=""):
+    """write_file writes a string to a text file.
+    Args:
+        filename (str): name of file.
+        text (str): text to be written.
+    Return: number of bytes written.
+    """
+    with open(filename, mode="w", encoding="UTF-8") as f:
+        return (f.write(text))
